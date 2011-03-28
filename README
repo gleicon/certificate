@@ -1,0 +1,17 @@
+ad-hoc certificate generator that I've used for IgniteSP (http://certs.7co.cc)
+
+- needs redis, hotqueue, gevent, PIL
+
+1) set the correct PATH and URL at:
+   consumer.py
+   frontend/js/script.js
+
+2) use the files under confs/ to setup nginx + supervisord to keep both certs.py and consumer.py up
+
+
+Request flow:                 name and img name               name and img name
+HTTP POST -> nginx|certs.py ---------------------> hotqueue <---------------------- consumer -> /public_dir/image
+
+gleicon 2011
+http://www.7co.cc
+
